@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1>{{the_title}}</h1>
+
+<h3>{{myList}}</h3>
+
+<ul>
+    {% for n in myList %}
+    <li>{{n}}</li>
+    {% endfor %}
+</ul>
+
+<table border=1>
+    <tr><Th colspan="4">{{the_title}}</th></tr>
+    <tr><TH>{{titleList[0]}}</th>
+    <th>{{titleList[1]}}</th>
+    <th>{{titleList[2]}}</th>
+    <th>{{titleList[3]}}</th>
+    
+     </tr>
+{% for key, value in myDict.items() %}
+    <tr>
+    <td>{{ key|e }}</td>
+    <td>{{ value[0]|e }}</td>
+    <td>{{ value[1]|e}}</td>
+    <td>{{ value[2]|e}}</td>
+    </tr>
+{% endfor %}
+</dl>
+
+
+
+
+
+{%endblock%}

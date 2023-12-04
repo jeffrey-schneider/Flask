@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+{# base.html #}
+{# This is a comment in the Jinja2 Template Language and a fine language it is. #}
+   {# https://jinja.palletsprojects.com/en/2.11.x/templates/ #}
+
+    <head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <div class="page-wrapper">
+    <title>{% block title %}{{the_title}}{% endblock %} - My Webpage</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div id="content">{% block content %}{% endblock %}</div>
+     
+      
+      
+    <div id="footer">
+      {% block footer %}
+      &copy; Copyright 2021 by <a href="http://domain.invalid/">Jeffrey Schneider</a>.     
+      {% if run_date %}
+        <p>Run date: {{run_date}}</p
+      {% endif %}
+            
+      {% endblock %}   
+    </div>
+    </div>            
+  </body>

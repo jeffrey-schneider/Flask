@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1>{{title}}</h1>
+    <p class="important">
+      Welcome to my awesome homepage.
+    </p>
+
+
+    {%if factors %}
+    <P>
+        Lets look at a set of factors:            
+            {% for i in factors %}
+                {{i}}
+            {%endfor%}            
+        </P>
+    {%endif%}
+
+    {%if result %}
+    <table border = 1>
+        {%for key, value in result.items() %}
+          <tr>
+          <td>{{key|e}}</td><td>{{value|e}}</td></tr>
+         {%endfor%}
+      </table>
+    {%endif%}
+
+
+{% endblock %}

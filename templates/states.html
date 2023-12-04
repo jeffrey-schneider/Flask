@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+  <h1>{{title}}</h1>
+  <p class="important">
+    State Information From Database
+{% block body %}
+  <table border=1>
+      
+      <th>Postal</th>
+      <th>Name</th>
+      <th>Capital</th>
+      <th>Largest City</th>
+      <th>Population</th>
+      <th>Total Area Miles</th>
+      <th>Land Area Miles</th>
+      <th>Water Area Miles</th>
+     
+  {% for stuff in result %}
+    <tr>
+      <td>{{ stuff.Postal }}</td>
+      <td>{{ stuff.Name }}</td>
+      <td>{{stuff.Capital}}</td>
+      <td>{{stuff.Largest}}</td>
+      <td>{{stuff.Population}}</td>
+      <td>{{stuff.total_area_miles}}</td> 
+      <td>{{stuff.land_area_miles}}</td> 
+      <td>{{stuff.water_area_miles}}</td>  
+    </tr>
+    
+  {% endfor %}
+  </table>
+{% endblock %}
+Run:  {{now}}
+{% endblock %}
+
+</body>
+</html>
